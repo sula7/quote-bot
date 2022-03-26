@@ -1,0 +1,9 @@
+# to apply this config rename to config.yml
+telegram:
+  token: foobar
+  poller:
+    timeout: 10s
+database:
+  name: foobar.db # located in project_root/db/filename.db
+logger:
+  level: debug
