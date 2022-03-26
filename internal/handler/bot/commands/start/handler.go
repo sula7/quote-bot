@@ -15,6 +15,6 @@ func (h *BotHandler) start(c telebot.Context) error {
 	return c.Send(fmt.Sprint("Hello, ", c.Message().Sender.Username))
 }
 
-func NewBotHandler(logger *zap.Logger) *BotHandler {
+func newBotHandler(logger *zap.Logger) *BotHandler {
 	return &BotHandler{logger: logger}
 }

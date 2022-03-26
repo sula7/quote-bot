@@ -6,6 +6,6 @@ import (
 )
 
 func RegisterRoutes(logger *zap.Logger) telebot.HandlerFunc {
-	handler := NewBotHandler(logger)
+	handler := newBotHandler(logger)
 	return handler.start
 }
