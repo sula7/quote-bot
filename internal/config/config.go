@@ -34,7 +34,7 @@ type (
 )
 
 func (c *Database) GetDBPath(appPath string) string {
-	return filepath.Join(appPath, "db", c.Name)
+	return fmt.Sprint(filepath.Join(appPath, "db", c.Name), "?_case_sensitive_like=false&_foreign_keys=true&mode=rw")
 }
 
 // NewConfig parses & returns app config.
