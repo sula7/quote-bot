@@ -34,6 +34,10 @@ func main() {
 
 	defer db.Close()
 
+	if err := sqlite.Migrate(db, filepath.Join(appPath, "scripts", "migrations")); err != nil {
+		log.Fatal("failed to exec migrations", zap.Error(err))
+	}
+
 	repository := sqlite.NewRepository()
 	services := domain.NewService(repository)
 
